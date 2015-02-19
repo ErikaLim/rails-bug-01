@@ -12,12 +12,20 @@
     <div class="logo">
       <%= link_to "Rails Practice", root_path %>
     </div>
-    <% if current_user %>
-      <div class="logout">
+     <% if current_user %>
+  
         <%= current_user.email %> |
-        <%= link_to "Logout", signout_path %>
-      </div>
+
+
+      <%= link_to "Sign Out", signout_path %>
+    <% else %>
+      <%= link_to "Sign Up", signup_path %>
+      |
+      <%= link_to "Sign In", signin_path %>
     <% end %>
+    <div>
+
+</div>
   </div>
 </header>
 <main>

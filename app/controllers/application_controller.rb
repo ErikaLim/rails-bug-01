@@ -3,8 +3,11 @@ class ApplicationController < ActionController::Base
 
   before_action :ensure_current_user
 
+
   def ensure_current_user
-    redirect_to signin_path unless current_user
+
+    redirect_to signin_path unless current_user || User.new
+
   end
 
   def current_user
@@ -12,5 +15,6 @@ class ApplicationController < ActionController::Base
   end
 
   helper_method :current_user
+
 
 end
